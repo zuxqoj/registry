@@ -40,6 +40,10 @@
                     <groupId>net.sf.ehcache</groupId>
                     <artifactId>ehcache-core</artifactId>
                 </exclusion>
+<!--                 <exclusion>
+                    <groupId>org.apache.directory.jdbm</groupId>
+                    <artifactId>apacheds-jdbm1</artifactId>
+                </exclusion> -->
             </exclusions>
         </dependency>
         <dependency>

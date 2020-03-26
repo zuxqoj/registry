@@ -109,7 +109,7 @@
         <module>common</module>
         <module>cache</module>
         <module>storage</module>
-        <module>webservice</module>
+        <!--module>webservice</module-->
         <module>tag-registry</module>
         <module>schema-registry</module>
         <module>examples</module>
@@ -561,39 +561,57 @@
         </dependencies>
     </dependencyManagement>
 
-    <repositories>
+
+
+	<repositories>
         <repository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>central</id>
-            <url>http://repo1.maven.org/maven2/</url>
+            <id>mvn111</id>
+            <url>https://repository.apache.org/content/repositories/releases//</url>
         </repository>
         <repository>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>clojars</id>
-            <url>https://repository.apache.org/content/repositories/snapshots/</url>
+            <id>mvn222</id>
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
-        <repository>
-            <id>hortonworks.repo</id>
-            <url>http://nexus-private.hortonworks.com/nexus/content/groups/public/</url>
-            <name>Hortonworks Repo</name>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+		<repository>
+			<id>hortonworks</id>
+			<name>hortonworks</name>
+			<url>http://repo.hortonworks.com/content/repositories/releases/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>apache</id>
+			<url>https://repository.apache.org/content/repositories/public/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>snapshot</id>
+			<url>https://repository.apache.org/content/repositories/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+
 
     <build>
         <pluginManagement>
